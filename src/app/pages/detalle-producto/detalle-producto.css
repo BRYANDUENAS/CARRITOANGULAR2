@@ -1,0 +1,100 @@
+.container {
+    max-width: 1200px;
+}
+
+.product-image-container {
+    position: sticky;
+    top: 20px;
+}
+
+.product-image-container img {
+    width: 100%;
+    height: auto;
+    max-height: 500px;
+    object-fit: contain;
+}
+
+.product-title {
+    font-size: 2.5rem;
+    font-weight: 300;
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+.product-price {
+    font-size: 1.8rem;
+}
+
+.product-description {
+    border-left: 4px solid #007bff;
+    padding-left: 1rem;
+}
+
+.product-description h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+.product-actions .btn {
+    padding: 0.75rem 2rem;
+    font-size: 1.1rem;
+}
+
+.product-details .card {
+    border: none;
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+}
+
+.product-details .list-group-item {
+    border-color: #f8f9fa;
+    padding: 0.75rem 1.25rem;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .product-title {
+        font-size: 2rem;
+    }
+
+    .product-price {
+        font-size: 1.5rem;
+    }
+
+    .product-actions .btn {
+        padding: 0.5rem 1rem;
+        font-size: 1rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .product-image-container {
+        position: static;
+        margin-bottom: 2rem;
+    }
+}
+
+/* Efectos hover para tarjetas de productos relacionados */
+.card {
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+}
+
+/* Spinner de carga */
+.spinner-border {
+    width: 3rem;
+    height: 3rem;
+}
+
+/* Mejoras visuales */
+.badge {
+    font-size: 0.9em;
+    padding: 0.5em 0.75em;
+}
+
+.btn-outline-primary:hover {
+    transform: translateY(-1px);
+}

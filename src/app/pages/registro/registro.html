@@ -1,0 +1,76 @@
+<div class="container-fluid vh-100">
+    <div class="row h-100">
+        <!-- Columna izquierda -->
+        <div class="col-md-6 d-none d-md-flex bg-primary p-5 text-white align-items-center">
+            <div class="text-center">
+                <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&q=80"
+                    alt="Tienda tecnológica" class="img-fluid rounded-circle mb-4" style="max-height: 300px;">
+                <h2 class="mb-4">Bienvenido a TechShop</h2>
+                <p class="lead">
+                    Únete a nuestra comunidad de entusiastas tecnológicos.
+                </p>
+                <div class="mt-4">
+                    <a routerLink="/login" class="btn btn-outline-light btn-lg">Iniciar sesión</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Columna derecha -->
+        <div class="col-md-6 d-flex align-items-center justify-content-center p-5">
+            <div class="w-100" style="max-width: 500px;">
+                @if (registrationSuccess) {
+                <div class="alert alert-success text-center">
+                    ¡Registro exitoso! Serás redirigido al login...
+                </div>
+                }
+
+                @if (errorMessage) {
+                <div class="alert alert-danger text-center">
+                    {{ errorMessage }}
+                </div>
+                }
+
+                <h2 class="mb-4 text-center">Crea tu cuenta</h2>
+
+                <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+                    <div class="mb-3">
+                        <label class="form-label">Nombre completo</label>
+                        <input type="text" class="form-control" formControlName="nombre">
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Correo electrónico</label>
+                        <input type="email" class="form-control" formControlName="email">
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Contraseña</label>
+                        <input type="password" class="form-control" formControlName="password">
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Confirmar contraseña</label>
+                        <input type="password" class="form-control" formControlName="confirmPassword">
+                    </div>
+
+                    <div class="form-check mb-4">
+                        <input class="form-check-input" type="checkbox" id="terminos" formControlName="aceptaTerminos">
+                        <label class="form-check-label" for="terminos">
+                            Acepto los <a href="#">términos y condiciones</a>
+                        </label>
+                        @if (registerForm.get('aceptaTerminos')?.invalid && registerForm.get('aceptaTerminos')?.touched)
+                        {
+                        <div class="text-danger small">
+                            Debes aceptar los términos y condiciones
+                        </div>
+                        }
+                    </div>
+
+                    <button type="submit" class="btn btn-primary w-100 py-2 mb-3" [disabled]="registerForm.invalid">
+                        Registrarse
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

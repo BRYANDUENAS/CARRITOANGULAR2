@@ -1,0 +1,42 @@
+/* register.component.scss */
+:host {
+    display: block;
+    height: 100vh;
+}
+
+.bg-primary {
+    background: linear-gradient(135deg, #3a7bd5 0%, #00d2ff 100%);
+}
+
+.form-control {
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #ced4da;
+    transition: all 0.3s;
+
+    &:focus {
+        border-color: #86b7fe;
+        box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+    }
+}
+
+.btn {
+    border-radius: 8px;
+    padding: 12px;
+    font-weight: 500;
+    transition: all 0.3s;
+}
+
+.btn-outline-light:hover {
+    color: #0d6efd !important;
+}
+
+@media (max-width: 767.98px) {
+    .vh-100 {
+        height: auto !important;
+    }
+
+    .row.h-100 {
+        height: auto !important;
+    }
+}
