@@ -6,6 +6,8 @@ import { Administracion } from './pages/administracion/administracion';
 import { DetalleProducto } from './pages/detalle-producto/detalle-producto';
 
 export const routes: Routes = [
+    // Ruta por defecto (redirige a home)
+    { path: "", redirectTo: "/home", pathMatch: "full" },
     { path: "home", component: Home },
 
     { path: "carrito", component: Carrito },
